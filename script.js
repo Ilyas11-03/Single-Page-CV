@@ -1,0 +1,2 @@
+ //Activer AOS 
+ AOS.init();
