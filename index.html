@@ -6,22 +6,9 @@
     <title>Professional CV Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/Flip.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollToPlugin.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/Draggable.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   
     <script>
-
-document.addEventListener("DOMContentLoaded", (event) => {
-  gsap.registerPlugin(Flip,ScrollTrigger,ScrollToPlugin,Draggable)
-  // gsap code here!
- });
 
         tailwind.config = {
             theme: {
@@ -114,10 +101,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
     <!-- Navigation -->
     <nav class="fixed w-full bg-white shadow-md z-50">
         <div class="container mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <div class="text-2xl font-bold text-primary">Aboulkassim<span class="text-secondary">Ilyas</span></div>
+            <div class="flex justify-between items-center" data-aos="fade-down" data-aos-duration="1000">
+                <div class="text-2xl font-bold text-primary" >Aboulkassim<span class="text-secondary">Ilyas</span></div>
 
-                <div class="hidden md:flex space-x-8">
+                <div class="hidden md:flex space-x-8" data-aos="fade-down" data-aos-duration="1000">
                     <a href="#home" class="nav-link active">Home</a>
                     <a href="#about" class="nav-link">About</a>
                     <a href="#experience" class="nav-link">Experience</a>
@@ -132,7 +119,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             </div>
 
             <!-- Mobile Menu -->
-            <div class="md:hidden hidden mt-4" id="mobile-menu">
+            <div class="md:hidden hidden mt-4" id="mobile-menu"> <!--md is for medium screens as mediq query in css-->
                 <div class="flex flex-col space-y-3">
                     <a href="#home" class="nav-link active">Home</a>
                     <a href="#about" class="nav-link">About</a>
@@ -152,20 +139,20 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 <div class="md:w-1/2 mb-10 md:mb-0">
 
                 <div>
-                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Hi, I'm Aboulkassim Ilyas</h1>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4" data-aos="fade-right" data-aos-duration="1500">Hi, I'm Aboulkassim Ilyas</h1>
                 </div>
 
-                    <h2 class="text-2xl md:text-3xl font-semibold mb-6">Junior Web Developer</h2>
-                    <p class="text-lg mb-8 opacity-90">I build exceptional digital experiences with modern technologies and clean code.</p>
+                    <h2 class="text-2xl md:text-3xl font-semibold mb-6" data-aos="fade-right" data-aos-duration="1700">Junior Web Developer</h2>
+                    <p class="text-lg mb-8 opacity-90" data-aos="fade-right" data-aos-duration="1900">I build exceptional digital experiences with modern technologies and clean code.</p>
                     <div class="flex space-x-4">
-                        <a href="#contact" class="bg-white text-primary px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 transition">Hire Me</a>
-                        <a href="http://linkedin.com/in/ilyas-aboulkassim-969b562a9/" target="_blank" class="border-2 border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:bg-opacity-10 transition">LinkeDin Profile</a>
+                        <a href="#contact" class="bg-white text-primary px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 transition" data-aos="fade-up" data-aos-duration="2100">Hire Me</a>
+                        <a href="http://linkedin.com/in/ilyas-aboulkassim-969b562a9/" target="_blank" class="border-2 border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:bg-opacity-10 transition" data-aos="fade-down" data-aos-duration="2300">LinkeDin Profile</a>
                     </div>
                 </div>
                 <div class="md:w-1/2 flex justify-center">
                     <div class="relative">
                         <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-white bg-opacity-20 absolute -z-10 top-4 left-4"></div>
-                        <img src="pictures/ilyas.png" alt="Profile" class="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover border-4 border-white shadow-xl">
+                        <img src="pictures/ilyas.png" alt="Profile" class="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover border-4 border-white shadow-xl" data-aos="zoom-in" data-aos-duration="2300">
                     </div>
                 </div>
             </div>
@@ -175,37 +162,37 @@ document.addEventListener("DOMContentLoaded", (event) => {
     <!-- About Section -->
     <section id="about" class="py-16 bg-white">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-12">About <span class="text-primary">Me</span></h2>
+            <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up" data-aos-duration="1500" data-aos-once="true">About <span class="text-primary">Me</span></h2>
             <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center">
+                <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center" data-aos="flip-left" data-aos-duration="1900" data-aos-once="true">
                     <img src="pictures/ilyas_cv.png" alt="About" class="w-64 h-64 rounded-lg object-cover shadow-lg">
                 </div>
                 <div class="md:w-2/3 md:pl-12">
-                    <h3 class="text-2xl font-semibold mb-4">Who am I?</h3>
-                    <p class="text-lg mb-6">I'm a passionate web developer with over 1 year of experience creating modern, responsive websites and web applications. I specialize in JavaScript frameworks like React and Node.js in the front-end and C# like Asp.Net Mvc in the back-end, and I'm committed to writing clean, efficient code.</p>
+                    <h3 class="text-2xl font-semibold mb-4" data-aos="fade-right" data-aos-duration="1700" data-aos-once="true">Who am I?</h3>
+                    <p class="text-lg mb-6" data-aos="fade-left" data-aos-duration="2100" data-aos-once="true">I'm a passionate web developer with over 1 year of experience creating modern, responsive websites and web applications. I specialize in JavaScript frameworks like React and Node.js in the front-end and C# like Asp.Net Mvc in the back-end, and I'm committed to writing clean, efficient code.</p>
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                        <div>
+                        <div data-aos="fade-down" data-aos-duration="2100" data-aos-once="true">
                             <h4 class="font-semibold mb-2">Name:</h4>
                             <p class="text-gray-600">Aboulkassim Ilyas</p>
                         </div>
-                        <div>
+                        <div data-aos="fade-up" data-aos-duration="2100" data-aos-once="true" >
                             <h4 class="font-semibold mb-2">Email:</h4>
                             <p class="text-gray-600">ilyas.aboulkassim@gmail.com</p>
                         </div>
-                        <div>
+                        <div data-aos="fade-right" data-aos-duration="2100" data-aos-once="true">
                             <h4 class="font-semibold mb-2">Age:</h4>
                             <p class="text-gray-600">21</p>
                         </div>
-                        <div>
+                        <div data-aos="fade-left" data-aos-duration="2100" data-aos-once="true">
                             <h4 class="font-semibold mb-2">From:</h4>
                             <p class="text-gray-600">Mohammedia, Morrocco</p>
                         </div>
                     </div>
                     
                     <div class="flex flex-wrap gap-4">
-                        <a href="pictures/ABOULKASSIM ILYAS CV Master.pdf" download="Aboulkassim Ilyas Cv" class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-secondary transition">Download CV</a>
-                        <a href="https://wa.me/212611366340" target="_blank" class="border border-primary text-primary px-6 py-2 rounded-lg hover:bg-primary hover:text-white transition">Contact Me</a>
+                        <a href="pictures/ABOULKASSIM ILYAS CV Master.pdf" download="Aboulkassim Ilyas Cv" class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-secondary transition" data-aos="zoom-in" data-aos-duration="2100" data-aos-once="true">Download CV</a>
+                        <a href="https://wa.me/212611366340" target="_blank" class="border border-primary text-primary px-6 py-2 rounded-lg hover:bg-primary hover:text-white transition" data-aos="zoom-in" data-aos-duration="2100" data-aos-once="true">Contact Me</a>
                     </div>
                 </div>
             </div>
@@ -216,7 +203,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     <section id="experience" class="py-16 bg-gray-50">
 
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-12">My <span class="text-primary">Experience</span></h2>
+            <h2 class="text-3xl font-bold text-center mb-12" data-aos="zoom-in" data-aos-duration="1500" data-aos-once="true">My <span class="text-primary">Experience</span></h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Education -->
@@ -227,7 +214,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     
                     <div class="relative pl-12">
                         <!-- Timeline Item 1 -->
-                        <div class="timeline-item relative pb-8">
+                        <div class="timeline-item relative pb-8" data-aos="zoom-in-left" data-aos-duration="1500" data-aos-once="true">
                             <div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white">
                                 <i class="fas fa-university"></i>
                             </div>
@@ -240,7 +227,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                         </div>
                         
                         <!-- Timeline Item 2 -->
-                        <div class="timeline-item relative pb-8">
+                        <div class="timeline-item relative pb-8" data-aos="zoom-in-left" data-aos-duration="1500" data-aos-once="true">
                             <div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white">
                                 <i class="fas fa-graduation-cap"></i>
                             </div>
@@ -257,12 +244,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 <!-- Work Experience -->
                 <div>
   <h3 class="text-2xl font-semibold mb-6 flex items-center">
-    <i class="fas fa-briefcase text-primary mr-3"></i> Professional Experience
+    <i class="fas fa-briefcase text-primary mr-3"></i> Professional Experience & Projects
   </h3>
   
   <div class="relative pl-12">
     <!-- Internship 1 -->
-    <div class="timeline-item relative pb-8">
+    <div class="timeline-item relative pb-8" data-aos="fade-right" data-aos-duration="1700" data-aos-once="true">
       <div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white">
         <i class="fas fa-laptop-code"></i>
       </div>
@@ -275,7 +262,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     </div>
     
     <!-- PFE 1 -->
-    <div class="timeline-item relative pb-8">
+    <div class="timeline-item relative pb-8" data-aos="fade-left" data-aos-duration="1700" data-aos-once="true">
       <div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white">
         <i class="fas fa-code"></i>
       </div>
@@ -289,7 +276,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     </div>
     
     <!-- Internship 2 -->
-    <div class="timeline-item relative pb-8">
+    <div class="timeline-item relative pb-8" data-aos="fade-right" data-aos-duration="1700" data-aos-once="true">
       <div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white">
         <i class="fas fa-database"></i>
       </div>
@@ -302,7 +289,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     </div>
     
     <!-- PFE 2 -->
-    <div class="timeline-item relative pb-8">
+    <div class="timeline-item relative pb-8" data-aos="fade-left" data-aos-duration="1700" data-aos-once="true">
       <div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white">
         <i class="fas fa-network-wired"></i>
       </div>
@@ -315,7 +302,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     </div>
     
     <!-- Internship 3 -->
-    <div class="timeline-item relative">
+    <div class="timeline-item relative" data-aos="fade-right" data-aos-duration="1700" data-aos-once="true">
       <div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white">
         <i class="fas fa-server"></i>
       </div>
@@ -334,161 +321,187 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     <!-- Skills Section -->
     <section id="skills" class="py-16 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-12">My <span class="text-primary">Skills</span></h2>
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">My <span class="text-primary">Skills</span></h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <!-- Technical Skills -->
+            <div data-aos="fade-right">
+                <h3 class="text-2xl font-semibold mb-6">Technical Skills</h3>
+                
+                <div class="space-y-6">
+                    <!-- Skill 1 -->
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="font-medium">HTML5 & CSS3</span>
+                            <span class="text-primary font-medium">95%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5">
+                            <div class="skill-bar bg-primary h-2.5 rounded-full" data-skill="95"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Skill 2 -->
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="font-medium">JavaScript</span>
+                            <span class="text-primary font-medium">90%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5">
+                            <div class="skill-bar bg-primary h-2.5 rounded-full" data-skill="90"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Skill 3 -->
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="font-medium">React.js</span>
+                            <span class="text-primary font-medium">88%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5">
+                            <div class="skill-bar bg-primary h-2.5 rounded-full" data-skill="88"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Skill 4 -->
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="font-medium">Node.js</span>
+                            <span class="text-primary font-medium">85%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5">
+                            <div class="skill-bar bg-primary h-2.5 rounded-full" data-skill="85"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <!-- Technical Skills -->
-                <div>
-                    <h3 class="text-2xl font-semibold mb-6">Technical Skills</h3>
+            <!-- Professional Skills -->
+            <div data-aos="fade-left">
+                <h3 class="text-2xl font-semibold mb-6">Professional Skills</h3>
+                
+                <div class="space-y-6">
+                    <!-- Skill 1 -->
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="font-medium">Communication</span>
+                            <span class="text-accent font-medium">90%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5">
+                            <div class="skill-bar bg-accent h-2.5 rounded-full" data-skill="90"></div>
+                        </div>
+                    </div>
                     
-                    <div class="space-y-6">
-                        <!-- Skill 1 -->
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="font-medium">HTML5 & CSS3</span>
-                                <span class="text-primary font-medium">95%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                <div class="skill-bar bg-primary h-2.5 rounded-full" style="width: 95%"></div>
-                            </div>
+                    <!-- Skill 2 -->
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="font-medium">Teamwork</span>
+                            <span class="text-accent font-medium">92%</span>
                         </div>
-                        
-                        <!-- Skill 2 -->
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="font-medium">JavaScript</span>
-                                <span class="text-primary font-medium">90%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                <div class="skill-bar bg-primary h-2.5 rounded-full" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        
-                        <!-- Skill 3 -->
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="font-medium">React.js</span>
-                                <span class="text-primary font-medium">88%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                <div class="skill-bar bg-primary h-2.5 rounded-full" style="width: 88%"></div>
-                            </div>
-                        </div>
-                        
-                        <!-- Skill 4 -->
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="font-medium">Node.js</span>
-                                <span class="text-primary font-medium">85%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                <div class="skill-bar bg-primary h-2.5 rounded-full" style="width: 85%"></div>
-                            </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5">
+                            <div class="skill-bar bg-accent h-2.5 rounded-full" data-skill="92"></div>
                         </div>
                     </div>
-                </div>
-                
-                <!-- Professional Skills -->
-                <div>
-                    <h3 class="text-2xl font-semibold mb-6">Professional Skills</h3>
                     
-                    <div class="space-y-6">
-                        <!-- Skill 1 -->
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="font-medium">Communication</span>
-                                <span class="text-accent font-medium">90%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                <div class="skill-bar bg-accent h-2.5 rounded-full" style="width: 90%"></div>
-                            </div>
+                    <!-- Skill 3 -->
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="font-medium">Project Management</span>
+                            <span class="text-accent font-medium">85%</span>
                         </div>
-                        
-                        <!-- Skill 2 -->
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="font-medium">Teamwork</span>
-                                <span class="text-accent font-medium">92%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                <div class="skill-bar bg-accent h-2.5 rounded-full" style="width: 92%"></div>
-                            </div>
-                        </div>
-                        
-                        <!-- Skill 3 -->
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="font-medium">Project Management</span>
-                                <span class="text-accent font-medium">85%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                <div class="skill-bar bg-accent h-2.5 rounded-full" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        
-                        <!-- Skill 4 -->
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="font-medium">Problem Solving</span>
-                                <span class="text-accent font-medium">95%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                <div class="skill-bar bg-accent h-2.5 rounded-full" style="width: 95%"></div>
-                            </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5">
+                            <div class="skill-bar bg-accent h-2.5 rounded-full" data-skill="85"></div>
                         </div>
                     </div>
-                </div>
-            </div>
-           
-            </div>
-           
-            <!-- Tools & Technologies -->
-            <div class="mt-16">
-                <h3 class="text-2xl font-semibold mb-8 text-center">Tools & Technologies</h3>
-                <div class="flex flex-wrap justify-center gap-6">
-                   
-                    <div class="flex flex-col items-center">
-                        <div class="w-16 h-16 bg-white rounded-full shadow-md flex items-center justify-center mb-2">
-                            <i class="fab fa-docker text-3xl text-blue-400"></i>
+                    
+                    <!-- Skill 4 -->
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="font-medium">Problem Solving</span>
+                            <span class="text-accent font-medium">95%</span>
                         </div>
-                        <span class="text-sm">Docker</span>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <div class="w-16 h-16 bg-white rounded-full shadow-md flex items-center justify-center mb-2">
-                            <i class="fas fa-code text-3xl text-blue-500"></i> <!-- Icône générique pour VS Code -->
+                        <div class="w-full bg-gray-200 rounded-full h-2.5">
+                            <div class="skill-bar bg-accent h-2.5 rounded-full" data-skill="95"></div>
                         </div>
-                        <span class="text-sm">VS Code</span>
-                    </div>
-                
-                    <!-- Insomnia -->
-                    <div class="flex flex-col items-center">
-                        <div class="w-16 h-16 bg-white rounded-full shadow-md flex items-center justify-center mb-2">
-                            <i class="fas fa-moon text-3xl text-purple-500"></i> <!-- Icône générique pour Insomnia -->
-                        </div>
-                        <span class="text-sm">Insomnia</span>
-                    </div>
-                
-                    <!-- Visual Studio -->
-                    <div class="flex flex-col items-center">
-                        <div class="w-16 h-16 bg-white rounded-full shadow-md flex items-center justify-center mb-2">
-                            <i class="fas fa-laptop-code text-3xl text-purple-600"></i> <!-- Icône générique pour Visual Studio -->
-                        </div>
-                        <span class="text-sm">Visual Studio</span>
-                    </div>
-                
-                    <!-- SSMS -->
-                    <div class="flex flex-col items-center">
-                        <div class="w-16 h-16 bg-white rounded-full shadow-md flex items-center justify-center mb-2">
-                            <i class="fas fa-database text-3xl text-orange-500"></i> <!-- Icône générique pour SSMS -->
-                        </div>
-                        <span class="text-sm">SSMS</span>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<script>
+    // Animation for skill bars
+    document.addEventListener('DOMContentLoaded', () => {
+        const skillBars = document.querySelectorAll('.skill-bar');
+        skillBars.forEach(bar => {
+            const skillValue = bar.getAttribute('data-skill');
+            bar.style.width = '0'; // Start with 0 width
+            bar.style.transition = 'width 1.5s ease-in-out';
+        });
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const bar = entry.target;
+                    const skillValue = bar.getAttribute('data-skill');
+                    bar.style.width = `${skillValue}%`;
+                }
+            });
+        }, { threshold: 0.5 });
+
+        skillBars.forEach(bar => observer.observe(bar));
+    });
+</script>
+
+    <!-- Tools & Technologies -->
+    <div class="mt-16">
+        <h3 class="text-2xl font-semibold mb-8 text-center">Tools & Technologies</h3>
+        <div class="flex flex-wrap justify-center gap-6">
+           
+            <div class="flex flex-col items-center">
+                <div class="w-16 h-16 bg-white rounded-full shadow-md flex items-center justify-center mb-2">
+                    <i class="fab fa-docker text-3xl text-blue-400"></i>
+                </div>
+                <span class="text-sm">Docker</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="w-16 h-16 bg-white rounded-full shadow-md flex items-center justify-center mb-2">
+                    <i class="fas fa-code text-3xl text-blue-500"></i> <!-- Icône générique pour VS Code -->
+                </div>
+                <span class="text-sm">VS Code</span>
+            </div>
+        
+            <!-- Insomnia -->
+            <div class="flex flex-col items-center">
+                <div class="w-16 h-16 bg-white rounded-full shadow-md flex items-center justify-center mb-2">
+                    <i class="fas fa-moon text-3xl text-purple-500"></i> <!-- Icône générique pour Insomnia -->
+                </div>
+                <span class="text-sm">Insomnia</span>
+            </div>
+        
+            <!-- Visual Studio -->
+            <div class="flex flex-col items-center">
+                <div class="w-16 h-16 bg-white rounded-full shadow-md flex items-center justify-center mb-2">
+                    <i class="fas fa-laptop-code text-3xl text-purple-600"></i> <!-- Icône générique pour Visual Studio -->
+                </div>
+                <span class="text-sm">Visual Studio</span>
+            </div>
+        
+            <!-- SSMS -->
+            <div class="flex flex-col items-center">
+                <div class="w-16 h-16 bg-white rounded-full shadow-md flex items-center justify-center mb-2">
+                    <i class="fas fa-database text-3xl text-orange-500"></i> <!-- Icône générique pour SSMS -->
+                </div>
+                <span class="text-sm">SSMS</span>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
 
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="script.js"></script>
 </body>
 </html>
