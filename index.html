@@ -100,37 +100,44 @@
 <body class="bg-light font-sans text-dark">
     <!-- Navigation -->
     <nav class="fixed w-full bg-white shadow-md z-50">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex justify-between items-center" data-aos="fade-down" data-aos-duration="1000">
-                <div class="text-2xl font-bold text-primary" >Aboulkassim<span class="text-secondary">Ilyas</span></div>
-
-                <div class="hidden md:flex space-x-8" data-aos="fade-down" data-aos-duration="1000">
-                    <a href="#home" class="nav-link active">Home</a>
-                    <a href="#about" class="nav-link">About</a>
-                    <a href="#experience" class="nav-link">Experience</a>
-                    <a href="#skills" class="nav-link">Skills</a>
-                    <a href="#portfolio" class="nav-link">Portfolio</a>
-                    <a href="#contact" class="nav-link">Contact</a>
+        <div class="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
+            <div class="flex justify-between items-center" data-aos="fade-down" data-aos-duration="800">
+                <!-- Logo avec animation -->
+                <div class="text-xl sm:text-2xl font-bold text-primary" data-aos="fade-right" data-aos-delay="100">
+                    Aboulkassim<span class="text-secondary">Ilyas</span>
                 </div>
-
-                <button class="md:hidden focus:outline-none" id="menu-toggle">
-                    <i class="fas fa-bars text-2xl text-primary"></i>
+    
+                <!-- Menu Desktop - avec animations séparées pour chaque lien -->
+                <div class="hidden md:flex space-x-6 lg:space-x-8">
+                    <a href="#home" class="nav-link active" data-aos="fade-down" data-aos-delay="150">Home</a>
+                    <a href="#about" class="nav-link" data-aos="fade-down" data-aos-delay="200">About Me</a>
+                    <a href="#experience" class="nav-link" data-aos="fade-down" data-aos-delay="250">Experience</a>
+                    <a href="#skills" class="nav-link" data-aos="fade-down" data-aos-delay="300">Skills</a>
+                    <a href="#about" class="nav-link" data-aos="fade-down" data-aos-delay="400">Contact</a>
+                </div>
+    
+                <!-- Bouton Menu Mobile - avec animation -->
+                <button class="md:hidden focus:outline-none" id="menu-toggle" data-aos="fade-left" data-aos-delay="100">
+                    <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
                 </button>
             </div>
-
-            <!-- Mobile Menu -->
-            <div class="md:hidden hidden mt-4" id="mobile-menu"> <!--md is for medium screens as mediq query in css-->
-                <div class="flex flex-col space-y-3">
-                    <a href="#home" class="nav-link active">Home</a>
-                    <a href="#about" class="nav-link">About</a>
-                    <a href="#experience" class="nav-link">Experience</a>
-                    <a href="#skills" class="nav-link">Skills</a>
-                    <a href="#portfolio" class="nav-link">Portfolio</a>
-                    <a href="#contact" class="nav-link">Contact</a>
+    
+            <!-- Menu Mobile - avec animation quand il s'ouvre -->
+            <div class="md:hidden hidden mt-3" id="mobile-menu" data-aos="fade-down" data-aos-duration="500">
+                <div class="flex flex-col space-y-2">
+                    <a href="#home" class="nav-link active px-3 py-2 rounded-md" data-aos="fade-right" data-aos-delay="50">Home</a>
+                    <a href="#about" class="nav-link px-3 py-2 rounded-md" data-aos="fade-right" data-aos-delay="100">About</a>
+                    <a href="#experience" class="nav-link px-3 py-2 rounded-md" data-aos="fade-right" data-aos-delay="150">Experience</a>
+                    <a href="#skills" class="nav-link px-3 py-2 rounded-md" data-aos="fade-right" data-aos-delay="200">Skills</a>
+                    <a href="#portfolio" class="nav-link px-3 py-2 rounded-md" data-aos="fade-right" data-aos-delay="250">Portfolio</a>
+                    <a href="#contact" class="nav-link px-3 py-2 rounded-md" data-aos="fade-right" data-aos-delay="300">Contact</a>
                 </div>
             </div>
         </div>
     </nav>
+
 
     <!-- Hero Section -->
     <section id="home" class="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-r from-primary to-secondary text-white">
@@ -145,7 +152,12 @@
                     <h2 class="text-2xl md:text-3xl font-semibold mb-6" data-aos="fade-right" data-aos-duration="1700">Junior Web Developer</h2>
                     <p class="text-lg mb-8 opacity-90" data-aos="fade-right" data-aos-duration="1900">I build exceptional digital experiences with modern technologies and clean code.</p>
                     <div class="flex space-x-4">
-                        <a href="#contact" class="bg-white text-primary px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 transition" data-aos="fade-up" data-aos-duration="2100">Hire Me</a>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ilyas.aboulkassim@gmail.com&su=Job%20Opportunity&body=Hello%20Ilyas,%0D%0A%0D%0AI%20am%20interested%20in%20hiring%20you%20for%20a%20project.%20Please%20let%20me%20know%20your%20availability.%0D%0A%0D%0ARegards," 
+                        target="_blank" 
+                        class="bg-white text-primary px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 transition" 
+                        data-aos="fade-up" data-aos-duration="2100">
+                        Hire Me
+                     </a>
                         <a href="http://linkedin.com/in/ilyas-aboulkassim-969b562a9/" target="_blank" class="border-2 border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:bg-opacity-10 transition" data-aos="fade-down" data-aos-duration="2300">LinkeDin Profile</a>
                     </div>
                 </div>
@@ -192,7 +204,7 @@
                     
                     <div class="flex flex-wrap gap-4">
                         <a href="pictures/ABOULKASSIM ILYAS CV Master.pdf" download="Aboulkassim Ilyas Cv" class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-secondary transition" data-aos="zoom-in" data-aos-duration="2100" data-aos-once="true">Download CV</a>
-                        <a href="https://wa.me/212611366340" target="_blank" class="border border-primary text-primary px-6 py-2 rounded-lg hover:bg-primary hover:text-white transition" data-aos="zoom-in" data-aos-duration="2100" data-aos-once="true">Contact Me</a>
+                        <a href="https://wa.me/212611366340" target="_blank" id="contact" class="border border-primary text-primary px-6 py-2 rounded-lg hover:bg-primary hover:text-white transition" data-aos="zoom-in" data-aos-duration="2100" data-aos-once="true">Contact Me</a>
                     </div>
                 </div>
             </div>
@@ -334,10 +346,10 @@
                     <div>
                         <div class="flex justify-between mb-1">
                             <span class="font-medium">HTML5 & CSS3</span>
-                            <span class="text-primary font-medium">95%</span>
+                            <span class="text-primary font-medium">80%</span>
                         </div>
                         <div class="w-full bg-gray-200 rounded-full h-2.5">
-                            <div class="skill-bar bg-primary h-2.5 rounded-full" data-skill="95"></div>
+                            <div class="skill-bar bg-primary h-2.5 rounded-full" data-skill="80"></div>
                         </div>
                     </div>
                     
@@ -345,10 +357,10 @@
                     <div>
                         <div class="flex justify-between mb-1">
                             <span class="font-medium">JavaScript</span>
-                            <span class="text-primary font-medium">90%</span>
+                            <span class="text-primary font-medium">75%</span>
                         </div>
                         <div class="w-full bg-gray-200 rounded-full h-2.5">
-                            <div class="skill-bar bg-primary h-2.5 rounded-full" data-skill="90"></div>
+                            <div class="skill-bar bg-primary h-2.5 rounded-full" data-skill="75"></div>
                         </div>
                     </div>
                     
@@ -356,10 +368,10 @@
                     <div>
                         <div class="flex justify-between mb-1">
                             <span class="font-medium">React.js</span>
-                            <span class="text-primary font-medium">88%</span>
+                            <span class="text-primary font-medium">75%</span>
                         </div>
                         <div class="w-full bg-gray-200 rounded-full h-2.5">
-                            <div class="skill-bar bg-primary h-2.5 rounded-full" data-skill="88"></div>
+                            <div class="skill-bar bg-primary h-2.5 rounded-full" data-skill="75"></div>
                         </div>
                     </div>
                     
@@ -367,13 +379,58 @@
                     <div>
                         <div class="flex justify-between mb-1">
                             <span class="font-medium">Node.js</span>
-                            <span class="text-primary font-medium">85%</span>
+                            <span class="text-primary font-medium">60%</span>
                         </div>
                         <div class="w-full bg-gray-200 rounded-full h-2.5">
-                            <div class="skill-bar bg-primary h-2.5 rounded-full" data-skill="85"></div>
+                            <div class="skill-bar bg-primary h-2.5 rounded-full" data-skill="60"></div>
                         </div>
                     </div>
+                     
                 </div>
+
+                <!-- Skill 5 -->
+<div>
+    <div class="flex justify-between mb-1">
+        <span class="font-medium">C#</span>
+        <span class="text-primary font-medium">70%</span>
+    </div>
+    <div class="w-full bg-gray-200 rounded-full h-2.5">
+        <div class="skill-bar bg-primary h-2.5 rounded-full" data-skill="70"></div>
+    </div>
+</div>
+
+<!-- Skill 6 -->
+<div>
+    <div class="flex justify-between mb-1">
+        <span class="font-medium">Java</span>
+        <span class="text-primary font-medium">55%</span>
+    </div>
+    <div class="w-full bg-gray-200 rounded-full h-2.5">
+        <div class="skill-bar bg-primary h-2.5 rounded-full" data-skill="55"></div>
+    </div>
+</div>
+
+<!-- Skill 7 -->
+<div>
+    <div class="flex justify-between mb-1">
+        <span class="font-medium">SQL</span>
+        <span class="text-primary font-medium">70%</span>
+    </div>
+    <div class="w-full bg-gray-200 rounded-full h-2.5">
+        <div class="skill-bar bg-primary h-2.5 rounded-full" data-skill="70"></div>
+    </div>
+</div>
+
+<!-- Skill 8 -->
+<div>
+    <div class="flex justify-between mb-1">
+        <span class="font-medium">ASP.NET MVC</span>
+        <span class="text-primary font-medium">75%</span>
+    </div>
+    <div class="w-full bg-gray-200 rounded-full h-2.5">
+        <div class="skill-bar bg-primary h-2.5 rounded-full" data-skill="75"></div>
+    </div>
+</div>
             </div>
             
             <!-- Professional Skills -->
@@ -396,10 +453,10 @@
                     <div>
                         <div class="flex justify-between mb-1">
                             <span class="font-medium">Teamwork</span>
-                            <span class="text-accent font-medium">92%</span>
+                            <span class="text-accent font-medium">80%</span>
                         </div>
                         <div class="w-full bg-gray-200 rounded-full h-2.5">
-                            <div class="skill-bar bg-accent h-2.5 rounded-full" data-skill="92"></div>
+                            <div class="skill-bar bg-accent h-2.5 rounded-full" data-skill="80"></div>
                         </div>
                     </div>
                     
@@ -418,10 +475,10 @@
                     <div>
                         <div class="flex justify-between mb-1">
                             <span class="font-medium">Problem Solving</span>
-                            <span class="text-accent font-medium">95%</span>
+                            <span class="text-accent font-medium">80%</span>
                         </div>
                         <div class="w-full bg-gray-200 rounded-full h-2.5">
-                            <div class="skill-bar bg-accent h-2.5 rounded-full" data-skill="95"></div>
+                            <div class="skill-bar bg-accent h-2.5 rounded-full" data-skill="80"></div>
                         </div>
                     </div>
                 </div>
@@ -452,6 +509,12 @@
 
         skillBars.forEach(bar => observer.observe(bar));
     });
+
+    //Mobile menu toggle
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+    const menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('hidden');
+});
 </script>
 
     <!-- Tools & Technologies -->
