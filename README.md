@@ -23,4 +23,5 @@ Ce portfolio a été conçu pour :
 - **Style** : Tailwindcss
 - **Animation** : AOS(Animate on Scroll Library) : https://michalsnik.github.io/aos/
 - **Hébergement** : Vercel
+- **Lien de portfolio** : https://single-page-cv-olive.vercel.app/
 
