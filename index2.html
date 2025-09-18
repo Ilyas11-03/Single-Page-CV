@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlavorFusion | Delicious Recipes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom CSS for animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        
+        .pulse-hover:hover {
+            animation: pulse 1.5s infinite;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        
+        .recipe-card:hover .recipe-img {
+            transform: scale(1.05);
+        }
+        
+        .recipe-img {
+            transition: transform 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #f59e0b;
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+        
+        .mobile-menu.open {
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <i class="fas fa-utensils text-amber-500 text-2xl mr-2"></i>
+                    <a href="#" class="text-2xl font-bold text-gray-800 hover:text-amber-500 transition">Flavor<span class="text-amber-500">Fusion</span></a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#" class="nav-link text-gray-700 hover:text-amber-500 font-medium">Home</a>
+                    <a href="#recipes" class="nav-link text-gray-700 hover:text-amber-500 font-medium">Recipes</a>
+                    <a href="#categories" class="nav-link text-gray-700 hover:text-amber-500 font-medium">Categories</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-amber-500 font-medium">About</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-amber-500 font-medium">Contact</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-gray-700 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu md:hidden bg-white px-4">
+                <div class="flex flex-col space-y-3 py-4">
+                    <a href="#" class="text-gray-700 hover:text-amber-500 font-medium">Home</a>
+                    <a href="#recipes" class="text-gray-700 hover:text-amber-500 font-medium">Recipes</a>
+                    <a href="#categories" class="text-gray-700 hover:text-amber-500 font-medium">Categories</a>
+                    <a href="#about" class="text-gray-700 hover:text-amber-500 font-medium">About</a>
+                    <a href="#contact" class="text-gray-700 hover:text-amber-500 font-medium">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-gradient-to-r from-amber-400 to-amber-600 text-white py-20">
+        <div class="container mx-auto px-4 text-center fade-in">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Discover Amazing Recipes</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Find the perfect recipe for any occasion, from quick weeknight dinners to impressive desserts.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#recipes" class="bg-white text-amber-600 font-bold py-3 px-6 rounded-full hover:bg-gray-100 transition delay-1 pulse-hover">Explore Recipes</a>
+                <a href="#" class="bg-transparent border-2 border-white text-white font-bold py-3 px-6 rounded-full hover:bg-white hover:text-amber-600 transition delay-2">Sign Up</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Featured Recipes -->
+    <section id="recipes" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800 fade-in">Featured Recipes</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Recipe Card 1 -->
+                <div class="recipe-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition fade-in delay-1">
+                    <div class="overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" 
+                             alt="Avocado Toast" class="recipe-img w-full h-64 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-sm text-gray-500">Breakfast</span>
+                            <span class="flex items-center text-amber-500">
+                                <i class="fas fa-star mr-1"></i> 4.8
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-gray-800">Avocado Toast with Poached Egg</h3>
+                        <p class="text-gray-600 mb-4">A healthy and delicious breakfast option that's ready in just 15 minutes.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500"><i class="far fa-clock mr-1"></i> 15 min</span>
+                            <a href="#" class="text-amber-500 font-medium hover:text-amber-600">View Recipe</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Recipe Card 2 -->
+                <div class="recipe-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition fade-in delay-2">
+                    <div class="overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" 
+                             alt="Vegetable Salad" class="recipe-img w-full h-64 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-sm text-gray-500">Salad</span>
+                            <span class="flex items-center text-amber-500">
+                                <i class="fas fa-star mr-1"></i> 4.5
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-gray-800">Rainbow Vegetable Salad</h3>
+                        <p class="text-gray-600 mb-4">A colorful mix of fresh vegetables with a tangy lemon dressing.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500"><i class="far fa-clock mr-1"></i> 20 min</span>
+                            <a href="#" class="text-amber-500 font-medium hover:text-amber-600">View Recipe</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Recipe Card 3 -->
+                <div class="recipe-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition fade-in delay-3">
+                    <div class="overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" 
+                             alt="Pizza" class="recipe-img w-full h-64 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-sm text-gray-500">Dinner</span>
+                            <span class="flex items-center text-amber-500">
+                                <i class="fas fa-star mr-1"></i> 4.9
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-gray-800">Homemade Margherita Pizza</h3>
+                        <p class="text-gray-600 mb-4">Classic Italian pizza with fresh mozzarella, basil, and tomato sauce.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500"><i class="far fa-clock mr-1"></i> 45 min</span>
+                            <a href="#" class="text-amber-500 font-medium hover:text-amber-600">View Recipe</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 fade-in delay-3">
+                <a href="#" class="inline-block bg-amber-500 text-white font-bold py-3 px-8 rounded-full hover:bg-amber-600 transition">View All Recipes</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800 fade-in">Recipe Categories</h2>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                <!-- Category 1 -->
+                <div class="category-card bg-white rounded-lg p-6 text-center shadow-md hover:shadow-lg transition fade-in delay-1">
+                    <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-egg text-amber-500 text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-800">Breakfast</h3>
+                    <p class="text-sm text-gray-500">32 recipes</p>
+                </div>
+                
+                <!-- Category 2 -->
+                <div class="category-card bg-white rounded-lg p-6 text-center shadow-md hover:shadow-lg transition fade-in delay-2">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-leaf text-green-500 text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-800">Salads</h3>
+                    <p class="text-sm text-gray-500">18 recipes</p>
+                </div>
+                
+                <!-- Category 3 -->
+                <div class="category-card bg-white rounded-lg p-6 text-center shadow-md hover:shadow-lg transition fade-in delay-3">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-drumstick-bite text-red-500 text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-800">Main Dishes</h3>
+                    <p class="text-sm text-gray-500">45 recipes</p>
+                </div>
+                
+                <!-- Category 4 -->
+                <div class="category-card bg-white rounded-lg p-6 text-center shadow-md hover:shadow-lg transition fade-in delay-1">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-ice-cream text-blue-500 text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-800">Desserts</h3>
+                    <p class="text-sm text-gray-500">28 recipes</p>
+                </div>
+                
+                <!-- Category 5 -->
+                <div class="category-card bg-white rounded-lg p-6 text-center shadow-md hover:shadow-lg transition fade-in delay-2">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-glass-whiskey text-purple-500 text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-800">Drinks</h3>
+                    <p class="text-sm text-gray-500">15 recipes</p>
+                </div>
+                
+                <!-- Category 6 -->
+                <div class="category-card bg-white rounded-lg p-6 text-center shadow-md hover:shadow-lg transition fade-in delay-3">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-bread-slice text-yellow-500 text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-800">Baking</h3>
+                    <p class="text-sm text-gray-500">22 recipes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8 fade-in">
+                    <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" 
+                         alt="About Us" class="rounded-lg shadow-lg w-full">
+                </div>
+                <div class="md:w-1/2 fade-in delay-1">
+                    <h2 class="text-3xl font-bold mb-6 text-gray-800">About FlavorFusion</h2>
+                    <p class="text-gray-600 mb-4">Welcome to FlavorFusion, where we believe that cooking should be fun, easy, and delicious. Our mission is to help home cooks of all levels discover the joy of cooking with simple, flavorful recipes.</p>
+                    <p class="text-gray-600 mb-6">Founded in 2015 by chef and food enthusiast Sarah Johnson, FlavorFusion has grown into a community of food lovers sharing their passion for great meals.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-check text-amber-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">1,000+ Recipes</h4>
+                                <p class="text-sm text-gray-500">For every occasion</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-users text-green-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">500K+ Members</h4>
+                                <p class="text-sm text-gray-500">In our community</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-amber-500 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-2xl mx-auto fade-in">
+                <h2 class="text-3xl font-bold mb-4">Join Our Newsletter</h2>
+                <p class="text-xl mb-8">Get weekly recipe inspiration, cooking tips, and exclusive offers delivered to your inbox.</p>
+                <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                    <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-full focus:outline-none text-gray-800">
+                    <button type="submit" class="bg-gray-800 text-white font-bold px-6 py-3 rounded-full hover:bg-gray-700 transition">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800 fade-in">Contact Us</h2>
+            
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="md:w-1/2 fade-in delay-1">
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"></textarea>
+                        </div>
+                        <button type="submit" class="bg-amber-500 text-white font-bold px-6 py-3 rounded-full hover:bg-amber-600 transition">Send Message</button>
+                    </form>
+                </div>
+                
+                <div class="md:w-1/2 fade-in delay-2">
+                    <div class="bg-gray-100 p-8 rounded-lg h-full">
+                        <h3 class="text-2xl font-bold mb-6 text-gray-800">Get in Touch</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-map-marker-alt text-amber-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Address</h4>
+                                    <p class="text-gray-600">123 Recipe Street, Foodville, FC 12345</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-phone-alt text-green-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Phone</h4>
+                                    <p class="text-gray-600">(123) 456-7890</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-envelope text-blue-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Email</h4>
+                                    <p class="text-gray-600">hello@flavorfusion.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-bold text-gray-800 mb-4">Follow Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-700 hover:bg-amber-500 hover:text-white transition">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-700 hover:bg-amber-500 hover:text-white transition">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-700 hover:bg-amber-500 hover:text-white transition">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-700 hover:bg-amber-500 hover:text-white transition">
+                                    <i class="fab fa-pinterest-p"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="fade-in">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-utensils text-amber-500 text-2xl mr-2"></i>
+                        <a href="#" class="text-2xl font-bold">Flavor<span class="text-amber-500">Fusion</span></a>
+                    </div>
+                    <p class="text-gray-400">Bringing delicious recipes to your kitchen since 2015.</p>
+                </div>
+                
+                <div class="fade-in delay-1">
+                    <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-amber-500 transition">Home</a></li>
+                        <li><a href="#recipes" class="text-gray-400 hover:text-amber-500 transition">Recipes</a></li>
+                        <li><a href="#categories" class="text-gray-400 hover:text-amber-500 transition">Categories</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-amber-500 transition">About Us</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-amber-500 transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="fade-in delay-2">
+                    <h3 class="text-lg font-bold mb-4">Popular Categories</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-amber-500 transition">Breakfast</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-500 transition">Vegetarian</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-500 transition">Desserts</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-500 transition">Quick Meals</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-500 transition">Baking</a></li>
+                    </ul>
+                </div>
+                
+                <div class="fade-in delay-3">
+                    <h3 class="text-lg font-bold mb-4">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Subscribe to get updates on new recipes and cooking tips.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-full focus:outline-none text-gray-800 w-full">
+                        <button type="submit" class="bg-amber-500 text-white px-4 py-2 rounded-r-full hover:bg-amber-600 transition">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center fade-in">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2023 FlavorFusion. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-amber-500 transition">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-amber-500 transition">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-amber-500 transition">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-amber-500 text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+        });
+        
+        // Back to Top Button
+        const backToTopBtn = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.remove('opacity-0', 'invisible');
+                backToTopBtn.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopBtn.classList.remove('opacity-100', 'visible');
+                backToTopBtn.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (mobileMenu.classList.contains('open')) {
+                        mobileMenu.classList.remove('open');
+                    }
+                }
+            });
+        });
+        
+        // Animation on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInOnScroll = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', fadeInOnScroll);
+        window.addEventListener('load', fadeInOnScroll);
+    </script>
+</body>
+</html>
